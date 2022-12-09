@@ -3,9 +3,13 @@
 #include <time.h>
 
 /**
- *  main - print if the number is posive, negative or 0
- *  Return: Always 0
+ *  main - main function to generate a random number
+ *
+ *  Return: Always 0 (Success)
+ *
  */
+
+int main(void)
 {
 	int n;
 
@@ -20,10 +24,9 @@
 	{
 		printf("%d is zero\n", n);
 	}
-	else
+	else if (n < 0)
 	{
-		printf("%d is negative \n", n);
+		printf("%d is negative\n", n);
 	}
-
 	return (0);
 }
