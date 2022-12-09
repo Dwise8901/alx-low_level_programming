@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
  * main - Entry point
- *
- * Return: Always 0 (success)
+ *followed by a new line, except q and e
+ * Return: Always 0
  */
 
 int main(void)
@@ -12,7 +12,7 @@ int main(void)
 	for (la = 'a'; la <= 'z'; la++)
 	{
 		if (la != 'e' && la != 'q')
-				putchar(la);
+			putchar(la);
 		}
 
 	putchar('\n');
