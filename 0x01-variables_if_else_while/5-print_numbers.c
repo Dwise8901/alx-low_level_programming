@@ -11,8 +11,8 @@ int main(void)
 {
 	int num;
 
-	for(num = 0; num < 10; num++)
-		printf("%d", num);
+	for (NUM = 0; NUM < 10; NUM++)
+		printf("%d", NUM);
 
 	printf("\n");
 
