@@ -11,10 +11,11 @@ int main(void)
 {
 	int num;
 
-	for (NUM = 0; NUM < 10; NUM++)
-		printf("%d", NUM);
+	for (num = 0; num < 10; num++)
 
-	printf("\n");
+		printf("%d",  num);
+
+	printf ("\n");
 
 	return (0);
 
