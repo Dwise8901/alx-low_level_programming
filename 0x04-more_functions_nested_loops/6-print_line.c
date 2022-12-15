@@ -19,7 +19,7 @@ else
 {
 for (co = 1; co <= n; co++)
 {
-_putchar(' ');
+_putchar('_');
 }
 _putchar('\n');
 }
