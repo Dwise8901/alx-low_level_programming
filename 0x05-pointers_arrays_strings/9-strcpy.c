@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * _strcpy - Entry point
- * @dest: pointer
- * @src: pointer
- * Return: Always 0 (Success)
+ * _strcpy - cpiers the string pointed to by src
+ * @dest: destination
+ * @src: source
+ * Return: string
  */
 
 char *_strcpy(char *dest, char *src)
 {
-	char *start = dest;
+	int len = 0;
 
-	while (*src != '\0')
+	while (*(src + len) != '\0')
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		*(dest + len) = *(src + len);
+		len++;
 	}
-	*(dest + i) = '\0';
-	return (start);
+
+	*(dest + len) + '\0';
+	return (dest);
 }
