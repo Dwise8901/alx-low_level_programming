@@ -1,10 +1,12 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * pint_array - Entry point
- * @a: pointer
- * @n: var
- * Return: Always 0 (Success)
+ * print_array - prints n elements of an array of ntegers.
+ * @a: pointer to array
+ * @n: number of array elements.
+ *
+ * Return: void.
  */
 
 void print_array(int *a, int n)
@@ -13,10 +15,11 @@ void print_array(int *a, int n)
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%d", *(a + i));
-		if (i < (n - 1))
+		printf("%d", a[i]);
+		if (i != n - 1)
 		{
-			printf(", ");
+			printf(",");
+			printf(" ");
 		}
 	}
 	printf("\n");
