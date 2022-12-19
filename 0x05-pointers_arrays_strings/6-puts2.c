@@ -4,7 +4,7 @@
  * puts2 - Entry point
  * @str: pointer
  * Return: Always 0 (Success)
- * */
+ */
 
 void puts2(char *str)
 {
