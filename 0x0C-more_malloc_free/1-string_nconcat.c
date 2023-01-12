@@ -1,39 +1,53 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * string_nconcat - fuction that concats two strings but with s2 by n amount.
- * @s1: base sting to concat to. `Null` will return as empty.
- * @s2: string to copy from. 'NULL' will return as empty string.
- * @n: amount of s2 to copy.
- * Return: pointer to allocated memory.
+ * string_nconcat - ...
+ * @s1: ...
+ * @s2: ...
+ * @n: ...
+ *
+ * Return: ...
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
+	unsigned int i = 0, j = 0, k = 0, l = 0;
 	char *str;
-	unsigned int i, a, b;
 
-	a = b = 0;
-	if (s1)
-		for (; s1[a]; a++)
-			;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-	if (!(n >= b))
-		b = n;
+	while (s1[i])
+		i++;
 
-	str = malloc(sizeof(char) * (a + b) + 1);
-	if (!str)
+	while (s2[k])
+		k++;
+
+	if (n >= k)
+		l = i + k;
+	else
+		l = i + n;
+
+	str = malloc(sizeof(char) * l + 1);
+	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; i < (a + b); i++)
+	k = 0;
+	while (j < l)
 	{
-		if (i < a)
-			str[i] = s1[i];
-		else
-			str[i] = s2[i - a];
+		if (j <= i)
+			str[j] = s1[j];
+
+		if (j >= i)
+		{
+			str[j] = s2[k];
+			k++;
+		}
+		j++;
 	}
-
-	str[i] = '\0';
-
+	str[j] = '\0';
 	return (str);
 }
