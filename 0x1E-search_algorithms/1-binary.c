@@ -1,56 +1,59 @@
-#include "search_algos.h"
-
-void print_array(int *array, size_t i, size_t size);
+#include <stdio.h>
 
 /**
- * binary_search - binary search algorithm in a string
- * @array: list of elements
- * @size: size of the list
- * @value: target to search
- * Return: element index on success (-1) on fail
+ * print_array - prints array being searched
+ * @array: array
+ * @start: starting index
+ * @end: ending index
+ *
+ * Return: void
  */
-int binary_search(int *array, size_t size, int value)
+void print_array(int *array, int start, int end)
 {
-	size_t low = 0, high = size - 1, half = 0;
+	int i;
 
-	if (array == NULL || value == 0)
-		return (-1);
+	if (!array || start > end)
+		return;
 
-	print_array(array, low, size);
-	while (low < high)
+	printf("Searching in array:");
+	for (i = start; i <= end; i++)
 	{
-		half = (low + high) / 2;
-		if (array[half] < value)
-		{
-			low = half + 1;
-			print_array(array, low, high + 1);
-		}
-		else if (array[half] > value)
-		{
-			high = half - 1;
-			print_array(array, low, high + 1);
-		}
+		printf(" %d", array[i]);
+		if (i != end)
+			printf(",");
 		else
-			return (array[half]);
+			printf("\n");
 	}
-	return (-1);
 }
 
 /**
- * print_array - print all elements in an array
- * @array: list of elements
- * @i: index to init
- * @size: size of the array
+ * binary_search - searches for value using Binary search algorithm
+ * @array: array to search in
+ * @size: array's size
+ * @value: value to search for
+ *
+ * Return: value's index (Exists) | -1 (Not Exists)
  */
-void print_array(int *array, size_t i, size_t size)
+int binary_search(int *array, size_t size, int value)
 {
-	printf("Searching in array: ");
-	while (i < size)
+	int left, right, mid;
+
+	if (!array)
+		return (-1);
+
+	left = 0, right = (int)size - 1;
+	while (left <= right)
 	{
-		if (i + 1 == size)
-			printf("%d ", array[i]);
+		print_array(array, left, right);
+
+		mid = (left + right) / 2;
+		if (array[mid] == value)
+			return (mid);
+		else if (array[mid] < value)
+			left = mid + 1;
 		else
-			printf("%d, ", array[i]);
-		i++;
-	} printf("\n");
+			right = mid - 1;
+	}
+
+	return (-1);
 }
